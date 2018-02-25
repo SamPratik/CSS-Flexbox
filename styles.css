@@ -9,7 +9,7 @@ body {
 
 .wrapper {
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -34,10 +34,18 @@ body {
   flex-wrap: wrap;
 }
 
+/*
+  when the browser is shrinked to less than 500px then the elements cannot be
+  shrinked anymore if the 'min-width' is set to 500px for each element, to see
+  the full element we need to scroll horizontally. But if we add 'flex-basis:500px'
+  instead of 'min-width:500px' then even though the browser is shrinked less than
+  500px, the horizontal scrollbar will not be displayed because the element will
+  be shrinked(less than 500px) too to fit in the browser view...
+*/
 .box {
   height: 100px;
-  min-width: 200px;
-  flex-grow: 1;
+  /* min-width: 500px; */
+  flex-basis: 500px;
 }
 
 .one {

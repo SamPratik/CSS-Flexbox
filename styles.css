@@ -11,6 +11,7 @@ body {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  width: 960px;
 }
 
 /*
@@ -27,29 +28,22 @@ body {
 
 .box {
   height: 100px;
-  min-width: 100px;
+  width: 320px;
 }
 /*
-  'flex-grow' enables an element to expand with the given rate but it will expand
-  keeping consistency with the growth rate of the relative elements of that
-  particular element but when the browser gets shrinked to 300px all the elements
-  will be 100px and elements will not follow 'flex-grow' property anymore as
-  'min-width:100px' is given to all the elements...
+  Shrink is not working properly...
 */
 .one {
   background-color: red;
-  /* will take 4 cols */
-  flex-grow: 4;
+  flex-shrink: 1;
 }
 
 .two {
   background-color: blue;
-  /* will take 6 cols */
-  flex-grow: 6;
+  flex-shrink: 2;
 }
 
 .three {
   background-color: green;
-  /* will take 2 cols */
-  flex-grow: 2;
+  flex-shrink: 3;
 }

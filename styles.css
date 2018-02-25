@@ -11,7 +11,6 @@ body {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  width: 960px;
 }
 
 /*
@@ -21,29 +20,34 @@ body {
   automatically be floated and also we dont have to clearfix the parent element
   which we have to do when we use 'float' property with the 'child elements'...
 */
+/*
+  whenever the element's width reaches to 200px as we have set the 'min-width:200px'
+  for each element, the elements do not shrink anymore. As a result elements go
+  outside the browser and we need to scroll horizontally to view those elements.
+  To avoid these situations we can use 'flex-wrap:wrap/wrap-reverse' so that
+  the element that cannot fit in the browser view goes to another line(goes down
+  for 'wrap' and goes up for 'wrap-reverse')...
+*/
 .flex-container {
   display: flex;
   background-color: #fff;
+  flex-wrap: wrap;
 }
 
 .box {
   height: 100px;
-  width: 320px;
+  min-width: 200px;
+  flex-grow: 1;
 }
-/*
-  Shrink is not working properly...
-*/
+
 .one {
   background-color: red;
-  flex-shrink: 1;
 }
 
 .two {
   background-color: blue;
-  flex-shrink: 2;
 }
 
 .three {
   background-color: green;
-  flex-shrink: 3;
 }

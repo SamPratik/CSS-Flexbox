@@ -12,3 +12,68 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+
+.flex-container {
+  background-color: #fff;
+  /*
+    adding a 'display:flex' property to a 'flex container' will give a lot of
+    flexibility to the direct children residing inside the 'flex container'.
+    This direct childrens are then called 'flex items' and these childrens will
+    automatically be floated and also we dont have to clearfix the parent element
+    which we have to do when we use 'float' property with the 'child elements'...
+  */
+  display: flex;
+}
+
+.box {
+  height: 100px;
+  min-width: 100px;
+}
+
+.one {
+  background-color: red;
+}
+
+.two {
+  background-color: blue;
+}
+
+.three {
+  background-color: green;
+}
+
+
+/******************************************
+*******************************************
+  ========Problems with float:left=========
+*******************************************
+******************************************/
+/* .flex-container {
+  background-color: #fff;
+} */
+
+/* ClearFix is a must when we add 'float:left'... */
+/* .flex-container::after {
+  content: '';
+  display: block;
+  clear: both;
+} */
+
+/* Added float property to the boxes... */
+/* .box {
+  height: 100px;
+  min-width: 100px;
+  float: left;
+}
+
+.one {
+  background-color: red;
+}
+
+.two {
+  background-color: blue;
+}
+
+.three {
+  background-color: green;
+} */
